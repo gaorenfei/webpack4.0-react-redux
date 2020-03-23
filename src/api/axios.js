@@ -4,12 +4,12 @@ import axios from "axios";
 // 记录和显示错误
 function errorLog(data, config) {
   // 打印到控制台
-  if (NODE_ENV === "development") {
+  if (process.env.NODE_ENV === "development") {
     console.error("请求接口报错:", config);
   }
 }
 
-const CancelToken = axios.CancelToken;
+// const CancelToken = axios.CancelToken;
 const api = axios.create({
   baseURL: "/",
   timeout: 30000, // 超时时间

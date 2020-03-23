@@ -2,8 +2,9 @@ const path = require("path");
 const config = require("./config");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin"); //HTML模板
+const DotenvFlow = require("dotenv-flow-webpack"); //配置env文件
 
-module.exports = (env, argv) => {
+module.exports = (env) => {
   return {
     entry: {
       main: path.join(__dirname, "../src/main.jsx")
@@ -15,7 +16,8 @@ module.exports = (env, argv) => {
       publicPath: "/"
     },
     module: {
-      rules: [{
+      rules: [
+        {
           test: /\.(png|jpg|gif|woff|woff2)$/,
           include: config.srcPath,
           loader: "url-loader?limit=8192&name=images/[hash:8].[name].[ext]",
@@ -60,9 +62,12 @@ module.exports = (env, argv) => {
         chunksSortMode: "none",
         hash: true
       }),
+      new DotenvFlow(),
       //全局变量
       new webpack.DefinePlugin({
-          NODE_ENV: JSON.stringify(env.NODE_ENV) // 定义环境变量
+        "process.env": {
+          NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+        }
       })
     ]
   }

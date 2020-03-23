@@ -7,7 +7,7 @@ module.exports = {
   "extends": "eslint:recommended",
   "globals": {
     __dirname: false,
-    NODE_ENV: false
+    process: false
   },
   "parser": "babel-eslint",
   "parserOptions": {
