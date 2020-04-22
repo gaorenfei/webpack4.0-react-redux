@@ -10,7 +10,8 @@ var vendors = [
     "react-dom",
     "react-router",
     "react-redux",
-    "redux"
+    "redux",
+    "axios"
 ];
 
 module.exports = {
