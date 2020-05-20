@@ -22,7 +22,6 @@ module.exports = (env, argv) =>
       rules: [
           {
               test: /\.css$/,
-              include: path.join(__dirname, "../src"),
               use: [MiniCssExtractPlugin.loader, "css-loader"]
           },
           {

@@ -3,7 +3,7 @@ import {
   connect
 } from "react-redux"
 import * as Act from "actions"
-
+import { Button } from "antd";
 class Login extends React.Component {
     constructor(props) {
       super(props)
@@ -33,7 +33,7 @@ class Login extends React.Component {
       } = this.state
       return (
         <div className = "login">
-          {!hideLogin && <div onClick = {this.login} > 登录 </div>}
+          {!hideLogin && <Button type="primary" onClick = {this.login} >登录</Button>}
           {hideLogin && <div> 欢迎登录 {app.account} </div>}
         </div>
         )
