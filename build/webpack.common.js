@@ -4,7 +4,7 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin"); //HTML模板
 const DotenvFlow = require("dotenv-flow-webpack"); //配置env文件
 
-module.exports = (env) => {
+module.exports = () => {
   return {
     entry: {
       main: path.join(__dirname, "../src/main.jsx")
@@ -18,16 +18,16 @@ module.exports = (env) => {
     module: {
       rules: [
         {
-          test: /\.(png|jpg|gif|woff|woff2)$/,
-          include: config.srcPath,
-          loader: "url-loader?limit=8192&name=images/[hash:8].[name].[ext]",
-          exclude: /node_modules/
+          test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+          loader: "url-loader?limit=10000&name=images/[hash:8].[name].[ext]"
         },
         {
-          test: /\.(ttf|eot|mp4|ogg|svg)$/,
-          include: config.srcPath,
-          loader: "file-loader",
-          exclude: /node_modules/
+          test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+          loader: "url-loader?limit=10000&name=media/[hash:8].[name].[ext]"
+        },
+        {
+          test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+          loader: "url-loader?limit=10000&name=font/[hash:8].[name].[ext]"
         },
         {
           test: /\.(js|jsx)$/,
