@@ -4,7 +4,6 @@ import { Provider } from "react-redux";
 import { HashRouter } from "react-router-dom";
 import App from "./app";
 import store from "./stores";
-import "antd/dist/antd.css";
 
 ReactDOM.render(
     <Provider store={store}>

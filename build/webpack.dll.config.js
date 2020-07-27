@@ -5,10 +5,9 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
     .BundleAnalyzerPlugin; //视图分析webpack情况
 
 var vendors = [
-    "core-js",
     "react",
     "react-dom",
-    "react-router",
+    "react-router-dom",
     "react-redux",
     "redux",
     "axios"

@@ -32,7 +32,8 @@ module.exports = () => {
         {
           test: /\.(js|jsx)$/,
           enforce: "pre",
-          use: [{
+          use: [
+            {
             loader: "eslint-loader",
             options: { // 指定错误报告的格式规范
               formatter: require("eslint-friendly-formatter")
@@ -68,7 +69,8 @@ module.exports = () => {
         "process.env": {
           NODE_ENV: JSON.stringify(process.env.NODE_ENV)
         }
-      })
+      }),
+      new webpack.optimize.ModuleConcatenationPlugin() //打包出来的代码文件更小、运行的更快
     ]
   }
 }
