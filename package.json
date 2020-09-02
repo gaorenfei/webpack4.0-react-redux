@@ -5,9 +5,6 @@
   "author": "grf",
   "license": "ISC",
   "description": "",
-  "sideEffects": [
-    "*.css"
-  ],
   "pre-commit": [
     "eslint"
   ],
