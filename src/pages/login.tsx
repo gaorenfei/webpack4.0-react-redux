@@ -4,7 +4,19 @@ import {
 } from "react-redux"
 import * as Act from "actions"
 import { Button } from "antd";
-class Login extends React.Component {
+
+interface ValueObject {
+  account: string
+}
+interface propsType {
+  app:ValueObject,
+  dispatch:any
+}
+interface StateType {
+  hideLogin: boolean;
+};
+class Login extends React.Component<propsType, StateType> {
+
     constructor(props) {
       super(props)
       this.state = {

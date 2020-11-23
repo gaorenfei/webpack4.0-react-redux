@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { HashRouter } from "react-router-dom";
+const { Provider }  = require('react-redux');
+const { HashRouter } = require("react-router-dom");
 import App from "./app";
 import store from "./stores";
 
@@ -15,6 +15,6 @@ ReactDOM.render(
   );
 
 // webpack进行热更新
-if (module.hot) {
-    module.hot.accept();
+if ((module as any).hot) {
+  (module as any).hot.accept();
 }

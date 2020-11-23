@@ -3,7 +3,7 @@ import Routers from "./routes";
 import "styles/app.less"
 
 class App extends React.Component {
-  constructor(props) {
+  constructor(props:any) {
     super(props);
     this.state = {
     };

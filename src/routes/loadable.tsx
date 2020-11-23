@@ -1,7 +1,7 @@
 import Loadable from "react-loadable";
 
 import React from "react";
-export const Loading = props => {
+export const Loading = (props) => {
   if (props.error) {
     // props.retry&&props.retry();
     window.location.reload();

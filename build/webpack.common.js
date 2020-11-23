@@ -7,7 +7,7 @@ const DotenvFlow = require("dotenv-flow-webpack"); //配置env文件
 module.exports = () => {
   return {
     entry: {
-      main: path.join(__dirname, "../src/main.jsx")
+      main: path.join(__dirname, "../src/main.tsx")
     },
     output: {
       chunkFilename: "[name].[contenthash:6].js", // 按需加载文件名称
@@ -41,11 +41,17 @@ module.exports = () => {
           }],
           include: config.srcPath,
           exclude: /node_modules/
+        },
+        {
+          test: /\.tsx?$/,
+          enforce: "pre",
+          loader: "ts-loader",
+          exclude: /node_modules/
         }
       ]
     },
     resolve: {
-      extensions: [".js", ".jsx", ".json"],
+      extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
       alias: { // 引入模块别名
         "@": `${config.srcPath}`,
         actions: `${config.srcPath}/actions`,
