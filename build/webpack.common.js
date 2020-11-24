@@ -54,8 +54,8 @@ module.exports = () => {
       extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
       alias: { // 引入模块别名
         "@": `${config.srcPath}`,
-        actions: `${config.srcPath}/actions`,
-        stores: `${config.srcPath}/stores`,
+        actions: `${config.srcPath}/actions/`,
+        stores: `${config.srcPath}/stores/`,
         pages: `${config.srcPath}/pages/`,
         util: `${config.srcPath}/util/`,
         styles: `${config.srcPath}/styles/`

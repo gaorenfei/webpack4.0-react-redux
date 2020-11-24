@@ -1,2 +1,2 @@
-declare module '*.js'
-declare module 'actions'
+// declare module '*.js'
+// declare module 'actions'
