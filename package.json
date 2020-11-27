@@ -13,7 +13,9 @@
     "build": "cross-env NODE_ENV=production webpack --colors --progress --config ./build/webpack.prod.js",
     "test": "cross-env NODE_ENV=test webpack --colors --progress --config ./build/webpack.prod.js",
     "dll": "webpack --config ./build/webpack.dll.config.js ",
-    "eslint": "eslint --ext .js --ext .jsx src"
+    "eslint": "eslint --ext .js --ext .jsx src",
+    "server:build": "cross-env NODE_ENV=development webpack -w --config ./build/webpack.server.js",
+    "server:start": "nodemon server/build/app.js"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
@@ -41,6 +43,7 @@
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "^0.9.0",
+    "nodemon": "^2.0.6",
     "open-browser-webpack-plugin": "^0.0.5",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "pre-commit": "^1.2.2",
@@ -56,7 +59,9 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "asset-require-hook": "^1.2.0",
     "axios": "^0.19.2",
+    "express": "^4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-loadable": "^5.5.0",

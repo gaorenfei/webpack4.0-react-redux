@@ -1,7 +1,7 @@
 import React from "react"
-import { connect } from "react-redux"
+// import { connect } from "react-redux"
 
-class Home extends React.Component {
+class Nomatch extends React.Component {
   constructor(props) {
     super(props)
     this.state = {}
@@ -11,7 +11,8 @@ class Home extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return state
-}
-export default connect(mapStateToProps)(Home)
+// function mapStateToProps(state) {
+//   return state
+// }
+// export default connect(mapStateToProps)(Nomatch)
+export default Nomatch

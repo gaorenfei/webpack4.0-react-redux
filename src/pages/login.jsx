@@ -4,6 +4,7 @@ import {
 } from "react-redux"
 import * as Act from "actions"
 import { Button } from "antd";
+// import "styles/app.css"
 class Login extends React.Component {
     constructor(props) {
       super(props)
@@ -32,7 +33,8 @@ class Login extends React.Component {
         hideLogin
       } = this.state
       return (
-        <div className = "login">
+        <div className="login">
+          <img src="../static/image/dog.jpg" />
           {!hideLogin && <Button type="primary" onClick = {this.login} >登录</Button>}
           {hideLogin && <div> 欢迎登录 {app.account} </div>}
         </div>

@@ -8,7 +8,7 @@ import store from "./stores";
 ReactDOM.render(
     <Provider store={store}>
         <HashRouter>
-          <App />
+          <App />,
         </HashRouter>
     </Provider>,
     document.getElementById("root")
